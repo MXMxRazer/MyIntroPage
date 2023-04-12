@@ -7,7 +7,7 @@ import * as HTML5 from '../../assets/html5.svg';
 import * as CSS3 from '../../assets/css.svg';
 import * as Java from '../../assets/java-icon.svg';
 import * as Javascript from '../../assets/javascript.svg';
-import * as CPP from '../../assets/c++.svg';
+// import * as CPP from '../../assets/c++.svg';
 import * as XML from '../../assets/xml.svg';
 import * as Python from '../../assets/python-icon.svg';
 
@@ -23,7 +23,7 @@ export default function LangView({ key, items }) {
     ]
 
     const iconsForCardsProgramming = [
-        [CPP, 'CPP'], 
+        // [CPP, 'CPP'], 
         [Java, 'Java'], 
         [Javascript, 'Javascript'],
         [Python, 'Python'], 
