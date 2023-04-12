@@ -1,7 +1,7 @@
 import { Container, useMediaQuery, useTheme } from "@mui/material";
 import { Box } from "@mui/system";
 import ProjectSection from "./projects";
-import Laptop from '../laptop.svg';
+import Laptop from '../assets/laptop.svg';
 import Carousel from "react-material-ui-carousel";
 import { data } from "../projectListJson/projectList.json.jsx";
 import { styledData } from "../dynamicStyles/styles";
@@ -13,7 +13,8 @@ export default function FullProjectSection() {
     const dynamicStyles = {
         Container: {
             ...mat && { ...styledData.breakpoints.sm.fullprojectSection.Container }
-        }
+        }, 
+
     }
 
     return (
@@ -48,9 +49,10 @@ export default function FullProjectSection() {
                                     projectName={item.projectName}
                                     projectImage={item.image}
                                     projectDescription={item.description}
+                                    projectDetails={item.details}
+                                    URL={item.URL}
                                 />
                             )
-                            console.log(item);
                         })
                 }
             </Carousel>

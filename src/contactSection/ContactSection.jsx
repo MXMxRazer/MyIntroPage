@@ -1,7 +1,19 @@
-import { Box, Container, TextField, Typography, useMediaQuery, useTheme } from "@mui/material";
-import Mail from '../mail.svg'
+import { Alert, Box, Button, Container, Snackbar, TextField, Typography, useMediaQuery, useTheme } from "@mui/material";
+import Mail from '../assets/mail.svg'
 import { styledData } from "../dynamicStyles/styles";
+import { useState } from "react";
+
 export default function ContactSection() {
+
+    const [open, setOpen] = useState(false); 
+
+    const handleSubmitClick = () => {
+        setOpen(true); 
+    }
+
+    const handleSubmitClose = (e) => {
+        setOpen(false); 
+    }
 
     const theme = useTheme();
     const mat = useMediaQuery(theme.breakpoints.down('sm'));
@@ -116,6 +128,36 @@ export default function ContactSection() {
                             fontSize: '1rem'
                         }}
                     />
+                    <Box
+                    className={"form-btn-section"}
+                    sx={{
+                        width: '100%', 
+                        display: 'flex', 
+                        justifyContent: 'flex-end'
+                    }}
+                    >
+                    <Button
+                        className={"form-btn"}
+                        variant="contained"
+                        color={'success'}
+                        sx={{
+                            width: '24%', 
+                            p: '0.9rem',
+                            fontSize: '1rem',  
+                            mt: '0.8rem',
+
+                        }}
+                        onClick={handleSubmitClick}
+                    >
+                        Submit
+                    </Button>
+                    
+                    <Snackbar open={open} autoHideDuration={6000} onClose={handleSubmitClose}>
+                    <Alert onClose={handleSubmitClose} severity="success" sx={{ width: '100%' }}>
+                        This is a success message!
+                    </Alert>
+                    </Snackbar>
+                    </Box>
                 </Container>
             </Box>
         </Container>

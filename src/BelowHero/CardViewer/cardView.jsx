@@ -24,8 +24,7 @@ export default function CardView({ icons, desc }) {
                     src={icons}
                     style={{
                         width: '100%',
-                        objectFit: 'cover',
-                        userSelect: 'none',
+                        objectFit: 'cover', 
                         filter: 'drop-shadow(2px 4px 6px black)'
                     }}
                 />

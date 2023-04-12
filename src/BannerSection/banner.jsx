@@ -20,7 +20,7 @@ export default function Banner() {
                     s = true;
                     rollers.forEach(prev => {
                         let startValue = 0;
-                        let endValue = 2000;
+                        let endValue = 12;
 
                         let duration = Math.floor(interval / endValue);
                         let counter = setInterval(() => {
@@ -66,26 +66,30 @@ export default function Banner() {
                     mt: '14%',
                     display: 'flex',
                     alignItems: 'center',
-                    width: 'fit-content',
+                    width: '90%',
                     height: 'auto',
                     bgcolor: 'transparent',
                     borderRadius: '1rem',
                     boxShadow: '0px 4px 24px 10px rgba(98, 98, 98, 0.6)',
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
                     ...dynamicStyles.dataContainer
                 }}
             >
                 {
-                    Array(['2000', 'Active'], ['2000', 'Registered'], ['2000', 'Used'])
-                        .map(item => {
+                    Array(['12', 'Active Projects'], ['4', 'Production Projects'], ['2', 'Maintaince Projects'])
+                        .map((item, index) => {
                             return (
                                 <div
-                                    key={item.id}
+                                    key={index}
                                 >
                                     <Box
-                                        key={item.id}
+                                        key={index}
                                         className={'middleBox'}
                                         sx={{
-                                            padding: '1rem 6rem !important'
+                                            padding: '1rem 6rem !important', 
+                                            transform: 'translateX(4%)'
                                         }}
                                     >
                                         <Typography
@@ -101,7 +105,7 @@ export default function Banner() {
                                             {item[0]}
                                         </Typography>
                                         <Typography
-                                            variant={'h5'}
+                                            variant={'h6'}
                                             fontWeight={'500'}
                                             color={'primary.contrastText'}
                                             sx={{

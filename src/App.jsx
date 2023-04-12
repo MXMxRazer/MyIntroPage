@@ -1,14 +1,13 @@
-import { Box, Container, createTheme, CssBaseline, TextField, ThemeProvider, Typography } from '@mui/material';
+import { Box, Container, createTheme, CssBaseline, TextField, ThemeProvider, Typography, useTheme, useMediaQuery } from '@mui/material';
 import Hero from './HeroSection/hero';
 import Navi from './Navigation/navi';
 import './App.css';
 import Banner from './BannerSection/banner';
 import IntroSection from './BelowHero/introduction';
-import ProjectSection from './ProjectSection/projects';
 import FullProjectSection from './ProjectSection/fullProjectSection';
 import ContactSection from './contactSection/ContactSection';
-import { styled } from '@mui/system';
 import IntroHeaders from './IntroHeaders/introHeaders';
+import { styledData } from './dynamicStyles/styles';
 
 const customTheme = createTheme({
   breakpoints: {
@@ -43,9 +42,34 @@ const customTheme = createTheme({
 
 
 function App() {
+
+  const theme = useTheme();
+  const mat = useMediaQuery(theme.breakpoints.down('sm'));
+  const dynamicStyles = {
+      HeightProblem: {
+          ...mat && { ...styledData.breakpoints.sm.heroSection.HeightProblem }
+      }
+  }
+
   return (
     <ThemeProvider theme={customTheme}>
       <CssBaseline />
+      <Container
+      sx={{
+        backgroundColor: 'secondary.third', 
+        width: '100%'
+      }}
+      >
+        <Typography
+        variant='subtitle'
+        sx={{
+          color: '#333',
+          fontStyle: 'italic !important'
+        }}
+        >
+          This website is still under construction.
+        </Typography>
+      </Container>
       <Container
         className="headContainer"
         maxWidth={"none"}
@@ -63,7 +87,8 @@ function App() {
           ['@media (max-width: 600px)']: {
             padding: '0.4rem !important',
             overflow: 'hidden'
-          }
+          }, 
+          ...dynamicStyles.HeightProblem
         }}
       >
         <Container
@@ -73,7 +98,7 @@ function App() {
             flexDirection: 'column',
             positoin: 'relative',
             width: '100%',
-            height: '100%'
+            height: '100%', 
           }}
         >
           <Navi />
@@ -120,6 +145,9 @@ function App() {
             >
               <FullProjectSection />
             </Container>
+            <IntroHeaders
+              header={"Contact"}
+            />
             <Container
               component={"footer"}
             >

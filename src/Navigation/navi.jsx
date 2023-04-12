@@ -2,6 +2,7 @@ import { Google } from '@mui/icons-material';
 import {
     AppBar, Container, Toolbar, Typography, Box, Button, Stack, useMediaQuery, IconButton
 } from '@mui/material';
+import {AiFillGithub} from 'react-icons/ai'; 
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import { styledData } from '../dynamicStyles/styles';
@@ -73,7 +74,7 @@ export default function Navi() {
                                 letterSpacing: 2
                             }}
                         >
-                            random
+                            Kritan
                         </Typography>
                     </Box>
 
@@ -95,10 +96,10 @@ export default function Navi() {
                             }}
                         >
                             {
-                                Array('Introduction', 'Projects', 'Contact Me').map(item => {
+                                Array('Introduction', 'Projects', 'Contact').map((item, index) => {
                                     return (
                                         <Button variant="texted"
-                                            key={item.id}
+                                            key={index}
                                             sx={{
                                                 padding: '1rem !important'
                                             }}
@@ -127,10 +128,18 @@ export default function Navi() {
                             variant={'contained'}
                             sx={{
                                 width: 'inherit',
-                                padding: '0.6rem 0.8rem !important'
+                                padding: '0.6rem 0.8rem !important', 
+                                display: 'flex', 
+                                gap: '.2rem', 
+                                color: '#bbb'
                             }}
                         >
-                            Get Started
+                            <AiFillGithub />
+                            <Typography
+                            variant='subtitle'
+                            >
+                                Github
+                            </Typography>
                         </Button>
                         <IconButton
                             className="topIcon"

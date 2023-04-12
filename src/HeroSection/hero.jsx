@@ -1,8 +1,9 @@
-import { Opacity, Scale } from "@mui/icons-material";
 import { Box, Button, Container, Paper, Typography, SvgIcon, Icon, useTheme, useMediaQuery } from "@mui/material";
 import { Stack } from "@mui/system";
-import ReactLogo from '../react.svg';
-import ViteLogo from '../vite.svg';
+import {BsFacebook} from 'react-icons/bs'; 
+import {AiFillInstagram} from 'react-icons/ai'; 
+import {FaLinkedinIn} from 'react-icons/fa'; 
+import ViteLogo from '../assets/vite.svg'; 
 import { styledData } from "../dynamicStyles/styles";
 
 export default function Hero() {
@@ -57,7 +58,7 @@ export default function Hero() {
                         position: 'absolute',
                         width: 'inherit',
                         height: 'inherit',
-                        translate: '-2% 0%',
+                        translate: '0% 0%',
                         zIndex: '1',
                         scale: '0.94',
                         filter: 'drop-shadow(0px 18px 14px black)',
@@ -78,7 +79,7 @@ export default function Hero() {
                             ...dynamicStyles.Typography.h2
                         }}
                     >
-                        The Hero Section.
+                        Hi, There Welcome to the Site. (Vite) 
                     </Typography>
                 </Box>
                 <Box
@@ -94,7 +95,8 @@ export default function Hero() {
                             ...dynamicStyles.Typography.subtitle1
                         }}
                     >
-                        This is the subtitle of the heading in the hero section.
+                        I'm Kritan here, trying my best to maintain out the site and 
+                        provide with more info about me on this site. 
                     </Typography>
                 </Box>
                 <Box
@@ -113,22 +115,29 @@ export default function Hero() {
                         }}
                     >
                         {
-                            Array('What\'s New?').map(item => {
+                            //Need to add more buttons. Hence, array is used.
+                            Array([<BsFacebook />, 'https://www.facebook.com/profile.php?id=100005679886289'], 
+                                [<AiFillInstagram />, 'https://instagram.com/'], 
+                                [<FaLinkedinIn />, 'https://www.linkedin.com/in/kritan-tamrakar-593667265/']).map((item, index) => {
                                 return (
                                     <Button
-                                        key={item.id}
+                                        key={index}
                                         color={"secondary"}
                                         sx={{
                                             zIndex: '2',
                                             mr: '1.4rem',
-                                            p: '1rem !important',
+                                            p: '0.8rem !important',
                                             borderRadius: '40px',
                                             border: 'none',
-                                            bgcolor: 'primary.main'
+                                            bgcolor: 'primary.main', 
+                                            fontSize: '1.4rem'
                                         }}
                                         variant={"contained"}
+                                        onClick={e => {
+                                            window.open(item[1])
+                                        }}
                                     >
-                                        {item}
+                                        {item[0]}
                                     </Button>
                                 );
                             })

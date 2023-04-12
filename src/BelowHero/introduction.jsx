@@ -1,12 +1,13 @@
-import { Box, Card, CardContent, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Card, CardContent, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Container } from "@mui/system";
-import phoneLogo from '../phone.svg'
-import { AiFillHtml5 } from 'react-icons/ai';
-import CardView from "./CardViewer/cardView";
+import phoneLogo from '../assets/phone.svg'
 import LangView from "./CardViewer/langView";
+import { useState } from "react";
 import { styledData } from "../dynamicStyles/styles";
 
 export default function IntroSection() {
+
+
 
     const theme = useTheme();
     const mat = useMediaQuery(theme.breakpoints.down('sm'));
@@ -131,22 +132,27 @@ export default function IntroSection() {
                             sx={{
                                 mt: '1.4rem',
                                 display: 'flex',
-                                justifyContent: 'flex-start',
+                                justifyContent: 'space-between',
                                 overflow: 'auto',
+                                gap: '1.2rem', 
                                 p: '1.4rem !important',
                                 borderRadius: '1rem',
                                 // bgcolor: 'secondary.main'
                             }}
                         >
-                            {
-                                Languages.map((item) => {
+                            { 
+                                Languages.map((item, index) => {
                                     return (
-                                        <>
+                                        <Container
+                                        key={index}
+                                        sx={{
+                                            display: 'flex'
+                                        }}
+                                        >
                                             <LangView
-                                                key={item.id}
                                                 items={item}
                                             />
-                                        </>
+                                        </Container>
                                     );
                                 })
                             }

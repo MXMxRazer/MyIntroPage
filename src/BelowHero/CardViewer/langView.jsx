@@ -3,14 +3,15 @@ import { useState } from 'react';
 import { FaPython } from 'react-icons/fa';
 import { BsCodeSlash } from 'react-icons/bs';
 import CardView from './cardView';
-import HTML5 from '../../html5.svg';
-import CSS3 from '../../css.svg';
-import Java from '../../java-icon.svg';
-import Javascript from '../../javascript.svg';
-import CPP from '../../c++.svg';
-import XML from '../../xml.svg';
-import Python from '../../python-icon.svg';
+import HTML5 from '../../assets/html5.svg';
+import CSS3 from '../../assets/css.svg';
+import Java from '../../assets/java-icon.svg';
+import Javascript from '../../assets/javascript.svg';
+import CPP from '../../assets/c++.svg';
+import XML from '../../assets/xml.svg';
+import Python from '../../assets/python-icon.svg';
 
+//Language Cards Layout
 export default function LangView({ key, items }) {
 
     const iconsForCardsScripting = [
@@ -22,7 +23,10 @@ export default function LangView({ key, items }) {
     ]
 
     const iconsForCardsProgramming = [
-        [CPP, 'CPP']
+        [CPP, 'CPP'], 
+        [Java, 'Java'], 
+        [Javascript, 'Javascript'],
+        [Python, 'Python'], 
     ]
 
     const [click, setClick] = useState({
@@ -40,8 +44,10 @@ export default function LangView({ key, items }) {
                 overflow: 'auto',
                 position: 'relative',
                 userSelect: 'none',
+                display: 'flex', 
+                p: '.4rem !important', 
 
-                '&:nth-child(2)': {
+                '&:last-of-type': {
                     mr: '0 !important'
                 }
             }}
@@ -74,25 +80,29 @@ export default function LangView({ key, items }) {
                     (items === 'Scripting Language')
                         ?
                         (<BsCodeSlash
-                            size={80}
+                            className='iconLang'
+                            size={60}
                         />)
                         :
                         (<FaPython
-                            size={80}
+                            className='iconLang'
+                            size={60}
                         />)
                 }
                 <Typography
+                    id={'textHeaderLang'}
                     variant={'h6'}
                     textAlign={'center'}
                     sx={{
                         position: 'relative',
-                        fontWeight: '400'
+                        fontWeight: '400', 
+                        alignSelf: 'center'
                     }}
                 >
                     {items}
                 </Typography>
             </CardActionArea>
-        </Paper>
+        </Paper>    
     );
 
     return (

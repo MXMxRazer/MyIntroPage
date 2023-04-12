@@ -7,11 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Box, Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
 
-export default function Preview({ open, setOpen, projectName, projectImage }) {
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+export default function Preview({ open, setOpen, projectName, projectImage, projectDetails, URL }) {
 
     const handleClose = () => {
         setOpen(false);
@@ -56,6 +52,7 @@ export default function Preview({ open, setOpen, projectName, projectImage }) {
                                             p: '0.6rem !important',
                                             translate: '0% 8%'
                                         }}
+                                        onClick={e => window.open(URL)}     
                                     >
                                         Vist Project
                                     </Button>
@@ -74,18 +71,11 @@ export default function Preview({ open, setOpen, projectName, projectImage }) {
                                     color={'secondary.third'}
                                     p={'0.6rem 1rem !important'}
                                 >
-                                    This App allows the users to get the experience
-                                    of real-time chating through the socket pathway.
+                                    {projectDetails}
                                 </Typography>
                             </CardContent>
                         </Card>
                     </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose}>Disagree</Button>
-                        <Button onClick={handleClose} autoFocus>
-                            Agree
-                        </Button>
-                    </DialogActions>
                 </Box>
             </Dialog>
         </div>

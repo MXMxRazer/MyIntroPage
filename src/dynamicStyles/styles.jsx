@@ -6,6 +6,11 @@ const styledData = {
                     position: 'relative'
                 }
             },
+            AbsoluteBar: {
+                '&:before': {
+                    height: '4px'
+                }
+            }, 
             Typography: {
                 variant: {
                     h1: {
@@ -58,6 +63,9 @@ const styledData = {
                 }
             },
             heroSection: {
+                HeightProblem: {
+                    height: '140% !important'
+                }, 
                 Container: {
                     // border: '2px solid red',
                     padding: '0rem 0.6rem !important',
@@ -67,10 +75,6 @@ const styledData = {
             banner: {
                 Container: {
                     padding: '1rem !important',
-
-                    '&:hover': {
-                        bgcolor: 'red'
-                    }
                 },
                 dataContainer: {
                     flexDirection: 'column',
@@ -91,7 +95,20 @@ const styledData = {
 
                     '#infoPortion': {
                         width: '100%'
-                    }
+                    }, 
+
+                    '.dynamicContainer': {
+                        flexDirection: 'column',
+                    }, 
+
+                    '.iconLang': {
+                        fontSize: '0.4em'
+                    },
+
+                    '#textHeaderLang': {
+                        fontSize: '1rem'
+                    }, 
+
                 },
                 CardContents: {
 
@@ -105,16 +122,31 @@ const styledData = {
                     '#imagePortion': {
                         width: '60%',
                         marginLeft: 'auto',
-                        marginRight: 'auto'
+                        marginRight: 'auto', 
+
+                        'img': {
+                            width: '74% !important', 
+                            mt: '2.4rem', 
+                            mb: '1.4rem'
+                        }
+
                     },
 
                     '.carousel': {
-                        height: '100%',
-                        width: '100%',
+                        mr: 'auto', 
+                        ml: 'auto', 
+                        width: '88%',
                         padding: '1rem 2rem !important'
+                    }, 
+
+                    '#workingTypo': {
+                        fontSize: '1.4rem'
                     }
                 }
             },
+            projectSection: {
+
+            }, 
             contactSection: {
                 Container: {
                     flexDirection: 'column',
@@ -127,7 +159,16 @@ const styledData = {
                     '.email': {
                         marginTop: '0.8rem !important',
                         marginBottom: '0.4rem !important'
+                    }, 
+
+                    '.form-btn-section': {
+
+                        '.form-btn': {
+                            width: '26%'
+                        }          
+
                     }
+
                 }
             }
         },
