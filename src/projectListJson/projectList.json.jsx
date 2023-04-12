@@ -1,4 +1,4 @@
-import messageImg from '../assets/messageImage.png';
+import * as messageImg from '../assets/messageImage.png';
 import JWTLogo from '../assets/jwt.jpeg';
 
 const data = [
