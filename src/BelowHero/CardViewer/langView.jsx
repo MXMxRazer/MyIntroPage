@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { FaPython } from 'react-icons/fa';
 import { BsCodeSlash } from 'react-icons/bs';
 import CardView from './cardView';
-import HTML5 from '../../assets/html5.svg';
-import CSS3 from '../../assets/css.svg';
-import Java from '../../assets/java-icon.svg';
-import Javascript from '../../assets/javascript.svg';
-import CPP from '../../assets/c++.svg';
-import XML from '../../assets/xml.svg';
-import Python from '../../assets/python-icon.svg';
+import * as HTML5 from '../../assets/html5.svg';
+import * as CSS3 from '../../assets/css.svg';
+import * as Java from '../../assets/java-icon.svg';
+import * as Javascript from '../../assets/javascript.svg';
+import * as CPP from '../../assets/c++.svg';
+import * as XML from '../../assets/xml.svg';
+import * as Python from '../../assets/python-icon.svg';
 
 //Language Cards Layout
 export default function LangView({ key, items }) {
